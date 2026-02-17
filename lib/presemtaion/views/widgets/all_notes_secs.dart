@@ -32,22 +32,7 @@ class AllNotesSecs extends StatelessWidget {
                         BuildModelBottomSheet(taskItemProvider: taskProvider),
                   );
 
-                  //  DateTime? pickedDate = await showDatePicker(
-
-                  //     context: context,
-                  //     initialDate: DateTime.now().toUtc(),          // التاريخ اللي هيظهر أول ما تفتح
-                  //     firstDate: DateTime(2000),            // الحد الأدنى
-                  //     lastDate: DateTime(2100),             // الحد الأقصى
-                  //     cancelText: "Cancel",                  // نص زر الإلغاء
-                  //     confirmText: "Ok",                 // نص زر التأكيد
-                  //     helpText: "اختر التاريخ المناسب",    // عنوان أعلى الـ Dialog
-                  //     initialEntryMode: DatePickerEntryMode.calendar, // Calendar view أول ما يظهر
-                  //   );
-                  //    if (pickedDate != null) {
-                  //     print("التاريخ المختار: $pickedDate");
-                  //   }
-
-                  //               // showDatePicker(context: context, firstDate: DateTime(200), lastDate: DateTime(300));
+          
                 },
 
                 iconBackgoundColor: Colors.black,
