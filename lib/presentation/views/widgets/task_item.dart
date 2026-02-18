@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:notaadepi/data/models/task_item_model.dart';
-import 'package:notaadepi/presemtaion/manager/task_item_provider.dart';
+import 'package:notaadepi/presentation/manager/task_item_provider.dart';
 import 'package:provider/provider.dart';
 
 class TaskItem extends StatelessWidget {

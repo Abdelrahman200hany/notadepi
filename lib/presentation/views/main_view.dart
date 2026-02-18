@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:notaadepi/presemtaion/views/widgets/all_notes_secs.dart';
-import 'package:notaadepi/presemtaion/views/widgets/completed_notes_sec.dart';
-import 'package:notaadepi/presemtaion/views/widgets/not_completed_notes_sec.dart';
+import 'package:notaadepi/presentation/views/widgets/all_notes_secs.dart';
+import 'package:notaadepi/presentation/views/widgets/completed_notes_sec.dart';
+import 'package:notaadepi/presentation/views/widgets/not_completed_notes_sec.dart';
 
 class MainView extends StatefulWidget {
   const MainView({super.key});

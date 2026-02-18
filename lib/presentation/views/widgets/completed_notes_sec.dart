@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:notaadepi/presemtaion/manager/task_item_provider.dart';
-import 'package:notaadepi/presemtaion/views/widgets/custom_task_header.dart';
-import 'package:notaadepi/presemtaion/views/widgets/task_item.dart';
+import 'package:notaadepi/presentation/manager/task_item_provider.dart';
+import 'package:notaadepi/presentation/views/widgets/custom_task_header.dart';
+import 'package:notaadepi/presentation/views/widgets/task_item.dart';
 import 'package:provider/provider.dart';
 
 class CompletedNotesSec extends StatelessWidget {

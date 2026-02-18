@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:notaadepi/data/models/task_item_model.dart';
-import 'package:notaadepi/presemtaion/manager/task_item_provider.dart';
-import 'package:notaadepi/presemtaion/views/widgets/custom_text_feild.dart';
+import 'package:notaadepi/presentation/manager/task_item_provider.dart';
+import 'package:notaadepi/presentation/views/widgets/custom_text_feild.dart';
 
 class BuildModelBottomSheet extends StatefulWidget {
   const BuildModelBottomSheet({super.key, required this.taskItemProvider});
