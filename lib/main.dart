@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:notaadepi/presentation/manager/task_item_provider.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:notaadepi/presentation/manager/cubit/task_cubit.dart';
 import 'package:notaadepi/presentation/views/main_view.dart';
-import 'package:provider/provider.dart';
 
 void main() {
   runApp(const NotaDepi());
@@ -14,11 +14,7 @@ class NotaDepi extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: ChangeNotifierProvider(
-        create: (context) =>TaskItemProvider() ,
-        child:    MainView()
-        
-      ),
+      home: BlocProvider(create: (context) => TaskCubit(), child: MainView()),
     );
   }
 }

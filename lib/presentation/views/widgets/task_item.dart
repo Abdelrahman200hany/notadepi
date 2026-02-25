@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:notaadepi/data/models/task_item_model.dart';
-import 'package:notaadepi/presentation/manager/task_item_provider.dart';
+import 'package:notaadepi/presentation/manager/cubit/task_cubit.dart';
 import 'package:provider/provider.dart';
 
 class TaskItem extends StatelessWidget {
@@ -9,7 +9,7 @@ class TaskItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final provider = Provider.of<TaskItemProvider>(context, listen: false);
+    final taskCubit = Provider.of<TaskCubit>(context);
 
     return ListTile(
       contentPadding: EdgeInsets.zero,
@@ -17,7 +17,7 @@ class TaskItem extends StatelessWidget {
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(4)),
         value: item.isCompleted,
         onChanged: (value) {
-          provider.toggleTask(item);
+          taskCubit.toggleTask(item);
         },
       ),
       title: Text(

@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:notaadepi/presentation/manager/task_item_provider.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:notaadepi/presentation/manager/cubit/task_cubit.dart';
 import 'package:notaadepi/presentation/views/widgets/build_model_buttom_sheet.dart';
 import 'package:notaadepi/presentation/views/widgets/custom_task_header.dart';
+import 'package:notaadepi/presentation/views/widgets/custom_text_feild.dart';
 import 'package:notaadepi/presentation/views/widgets/task_item.dart';
 import 'package:provider/provider.dart';
 
@@ -22,26 +24,32 @@ class AllNotesSecs extends StatelessWidget {
                 title: 'Tasks',
                 icon: Icons.add,
                 onPressed: () {
-                  final taskProvider = context.read<TaskItemProvider>();
+                  final taskCubit = context.read<TaskCubit>();
                   showModalBottomSheet(
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadiusGeometry.circular(16),
                     ),
                     context: context,
                     builder: (context) =>
-                        BuildModelBottomSheet(taskItemProvider: taskProvider),
+                        BuildModelBottomSheet(taskCubit: taskCubit),
                   );
-
-          
                 },
 
                 iconBackgoundColor: Colors.black,
               ),
+
+              SizedBox(height: 24),
+              CustomTextFeild(
+                hint: 'search',
+                onChanged: (value) {
+                  context.read<TaskCubit>().search(value);
+                },
+              ),
               SizedBox(height: 32),
               Expanded(
-                child: Consumer<TaskItemProvider>(
-                  builder: (context, state, child) {
-                    final tasks = state.allList;
+                child: BlocBuilder<TaskCubit, TaskState>(
+                  builder: (context, state) {
+                    final tasks = context.watch<TaskCubit>().displayedList;
 
                     return ListView.builder(
                       itemCount: tasks.length,

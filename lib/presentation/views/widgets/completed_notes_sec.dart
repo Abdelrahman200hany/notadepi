@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:notaadepi/presentation/manager/task_item_provider.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:notaadepi/presentation/manager/cubit/task_cubit.dart';
 import 'package:notaadepi/presentation/views/widgets/custom_task_header.dart';
 import 'package:notaadepi/presentation/views/widgets/task_item.dart';
 import 'package:provider/provider.dart';
@@ -18,15 +19,15 @@ class CompletedNotesSec extends StatelessWidget {
             children: [
               SizedBox(height: 24),
               CustomTaskHeader(
-                title: 'Tasks',
+                title: 'completed',
                 icon: Icons.done,
                 iconBackgoundColor: Colors.blueAccent,
               ),
               SizedBox(height: 36),
               Expanded(
-                child: Consumer<TaskItemProvider>(
-                  builder: (context, state, child) {
-                    final tasks = state.completedList;
+                child: BlocBuilder<TaskCubit, TaskState>(
+                  builder: (context, state) {
+                    final tasks = context.read<TaskCubit>().completedList;
 
                     return ListView.builder(
                       itemCount: tasks.length,

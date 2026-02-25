@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:notaadepi/data/models/task_item_model.dart';
-import 'package:notaadepi/presentation/manager/task_item_provider.dart';
+import 'package:notaadepi/presentation/manager/cubit/task_cubit.dart';
 import 'package:notaadepi/presentation/views/widgets/custom_text_feild.dart';
 
 class BuildModelBottomSheet extends StatefulWidget {
-  const BuildModelBottomSheet({super.key, required this.taskItemProvider});
+  const BuildModelBottomSheet({super.key, required this.taskCubit});
 
-  final TaskItemProvider taskItemProvider;
+  final TaskCubit taskCubit;
 
   @override
   State<BuildModelBottomSheet> createState() => _BuildModelBottomSheetState();
@@ -71,7 +71,7 @@ class _BuildModelBottomSheetState extends State<BuildModelBottomSheet> {
             width: double.infinity,
             child: TextButton(
               onPressed: () {
-                widget.taskItemProvider.addNewTask(
+                widget.taskCubit.addNewTask(
                   TaskModelItem(
                     title: title ?? 'no tilte',
                     data: '${data ?? 'no date'}',
