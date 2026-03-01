@@ -9,3 +9,4 @@ final class TaskAddSuccess extends TaskState {}
 
 final class TaskChangeState extends TaskState {}
 final class TaskSearchState extends TaskState {}
+final class TaskReadState extends TaskState {}

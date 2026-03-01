@@ -11,6 +11,12 @@ class MainView extends StatefulWidget {
 }
 
 class _MainViewState extends State<MainView> {
+  // @override
+  // void initState() {
+  //   context.read<TaskCubit>().readNotes();
+  //   super.initState();
+  // }
+
   int currentInd = 0;
   @override
   Widget build(BuildContext context) {
